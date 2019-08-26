@@ -3,9 +3,11 @@ var router = express.Router();
 var passport = require('passport');
 
 /* GET home page. */
-router.get('/', (req, res) => {
-  res.render('index')
-})
+// router.get('/', function(req, res) {
+//   res.render('recipes/index', {
+
+//   });
+// });
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
@@ -13,12 +15,12 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/index',
-    failureRedirect : '/index'
+    successRedirect : '/',
+    failureRedirect : '/'
   }
 ));
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/index');
+  res.redirect('/');
 });
 module.exports = router;

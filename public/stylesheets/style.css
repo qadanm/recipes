@@ -1,8 +1,31 @@
 body {
   padding: 50px;
+  
+  background-color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(131, 24, 122);
+  font-size: 4em;
+  padding: 30px;
+  background-color: #ececec;
+  text-decoration: none;
+}
+
+
+tr{
+  font-size: 3em;
+  border: 2px solid black
+}
+
+td{
+  border: 2px solid black;
+  padding: 20px 20px;
+}
+
+#button{
+  width: 100%;
+  background-color: cadetblue;
+  color: white;
 }

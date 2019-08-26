@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+    <form name="sumbit-recipe" method="POST" action="/recipes">
+        <table>
+            <tr>
+            <td>Recipe Name</td>
+                <td><input type="text" name="title" ></td>
+            </tr>
+            <tr>
+                <td>Ingredients (Sepereated by commas)</td>
+                <td><input type="text" name="ingredients" ></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" name="description" ></td>
+                </tr>
+            <tr>
+                <td colspan="2"><input type="submit" id="button"></td>
+            </tr>
+        </table>
+        </form>   
+
+<%- include('../partials/footer') %>
