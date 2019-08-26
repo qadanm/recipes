@@ -22,6 +22,12 @@ require('./config/passport');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// app.get('/recipes', function(req, res){
+//   res.render('recipes/index', {
+//     recipes: recipesDatabase.getAll()
+//   })
+// })
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
