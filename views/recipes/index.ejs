@@ -1,3 +1,12 @@
 <%- include('../partials/header') %>
 
-<%- include('../partials/footer') %>
+
+    <% recipes.forEach(function(r) { %>
+        <div class="recipe-box">
+            <div class="recipe-title"><a href="/recipes/<%= r._id %>" class="recipe-button"><%= r.title %></a></div>
+            <div class="recipe-ing"><%= r.ingredients %></div>
+            <div class="recipe-desc"><%= r.description %></div>
+        </div>
+    <% }); %>
+
+<%- include('../partials/footer') %> 
