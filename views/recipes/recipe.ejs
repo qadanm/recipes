@@ -4,13 +4,21 @@
 
 <section id="show-page">
     <div>Recipe: </div>
-        <div><%= r.title %></div>
+        <div><%= recipe.title %></div>
     <div>Ingredients: </div>
-        <div><%= r.ingredients %></div>
+        <div><%= recipe.ingredients %></div>
     <div>Description: </div>
-        <div><%= r.description %></div>
+        <div><%= recipe.description %></div>
 </section>
 
+<br><br><br>
+<br><br><h2>Comments</h2>
+<form id="add-commeny-form" method="POST"
+  action="/recipes/<%= recipe._id %>/reviews">
+  <label>Comment:</label>
+  <textarea name="content"></textarea>
+  <input type="submit" value="Add Comment">
+</form>
 
 
 <%- include('../partials/footer') %>
