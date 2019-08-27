@@ -2,8 +2,8 @@ const Recipe = require('../models/user-profile')
 
 module.exports = {
     index,
-    create
-    // addRecipe,
+    create,
+    addRecipe,
     // deleteRecipe
 }
 
@@ -18,13 +18,20 @@ function index(req, res) {
     });
   }
 
-  function create(req, res) {
+  function addRecipe(req,res){
     var recipe = new Recipe(req.body);
-    recipe.save(function(err) {
-      if (err) return res.redirect('/recipes/new');
+    recipe.save(function(err){
+      console.log(req.body)
+      console.log(recipe)
+    })
+  }
 
-      res.redirect(`/recipes`);
-    });
+  function create(req, res, err){
+      // if (err) return res.redirect('recipes/index');
+      res.render('recipes/submit',{
+        user: req.user,
+        name: req.query.name,
+      });
   }
 
 // function addRecipes(req, res, next){

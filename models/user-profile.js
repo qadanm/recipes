@@ -12,16 +12,16 @@ var recipeSchema = new mongoose.Schema({
     },
   }, {
     timestamps: true
-  });
+});
 
-  var userProfileSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    recipes: [recipeSchema],
-    googleId: String
-  }, {
-    timestamps: true
-  });
+  // var userProfileSchema = new mongoose.Schema({
+  //   name: String,
+  //   email: String,
+  //   recipes: [recipeSchema],
+  //   googleId: String
+  // }, {
+  //   timestamps: true
+  // });
 
 
 // module.exports = {
@@ -31,4 +31,4 @@ var recipeSchema = new mongoose.Schema({
 
 // }
 
-module.exports = mongoose.model('Recipe', userProfileSchema);
+module.exports = mongoose.model('Recipe', recipeSchema); 

@@ -7,10 +7,13 @@ body {
 
 a {
   color: rgb(131, 24, 122);
-  font-size: 4em;
-  padding: 30px;
+  font-size: 2em;
+  padding: 10px;
+  margin: 10px;
   background-color: #ececec;
   text-decoration: none;
+  display: block;
+  border: 2px solid black;
 }
 
 
@@ -21,7 +24,7 @@ tr{
 
 td{
   border: 2px solid black;
-  padding: 20px 20px;
+  padding: 10px;
 }
 
 #button{
