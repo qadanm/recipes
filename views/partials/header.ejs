@@ -7,20 +7,23 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title></title>
 </head>
+<header>
+    <div id="icon"></div>
 <body>
     <nav>
         <% if (user) { %>
-          <a href="/logout">Log Out</a>
+          <a href="/logout" id="login">Log Out</a>
         <% } else { %>
-          <a href="/auth/google">Log In</a>
+          <a href="/auth/google" id="logout">Log In</a>
         <% } %>
     </nav>
-    <nav>
+    <nav> 
         <% if (user) { %>
-          <a href="/submit">Add Recipe</a>
+          <a href="/submit" id="add-recipe-button-nav">Add Recipe</a>
         <% } else { %>
-          <a>Log In to Post</a>
+          <a style="visibility: hidden">Log In to Post</a>
         <% } %>
     </nav>
+  </header>
   <main>
     <h1></h1>

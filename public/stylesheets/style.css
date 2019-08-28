@@ -1,33 +1,133 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgba(162, 200, 209, 0.87);
+  height: 70px;
+  align-items: baseline;
+  align-items: center;
+}
+
+#icon{
+  width: 57px;
+  height: 75px;
+  background: url(../images/icon/strawberry.svg);
+  background-repeat: no-repeat;
+  background-size: 75px 57px;
+  position: Absolute; 
+  top: 5px; 
+  left: 5px; 
+  transition: all .4s;
+}
+#icon:hover{
+  width: 60px;
+  height: 78px;
+  background-size: 78px 60px;
+}
+
 body {
-  padding: 50px;
-  
-  background-color: white;
+  background-color: #f5f5f5;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: rgb(131, 24, 122);
-  font-size: 2em;
+#login, #logout, #add-recipe-button-nav {
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
   padding: 10px;
   margin: 10px;
-  background-color: #ececec;
+  background-color: #ffe600ad;
   text-decoration: none;
   display: block;
-  border: 2px solid black;
+  border: 2px solid transparent;
+  transition: all .4s;
 }
 
+#login:hover, #logout:hover, #add-recipe-button-nav:hover {
+  color: rgb(255, 255, 255);
+  font-size: 1.25em;
+  padding: 10px;
+  margin: 10px;
+  background-color: transparent;
+  border: 2px solid #ffe600ad;
+  text-decoration: none;
+  display: block;
+}
+
+/* .image-window{
+  height: 500px;
+  background: url(../images/bowl-cuisine-delicious-1640773.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+} */
+.image-window {
+    
+  min-height: 500px;
+  background-image: url(../images/bowl-cuisine-delicious-1640773.jpg);
+  background-size: cover;
+  background-attachment: fixed
+  
+}
+#image-window-black-area-background{
+  display: flex;
+  height: 300px;
+  width: 60%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.349);
+  left: 20%;
+  top: 100px;
+  justify-content: space-evenly;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.219);
+}
+#image-window-text{
+  font-size: 1.4em;
+  color: white;
+  text-shadow: 4px 4px 4px rgb(70, 70, 70, 1);
+  text-align: center;
+  margin-top: 7%;
+  padding: 30px;
+  max-height: 290px;
+  max-width: 500px;
+  font-style: italic;
+}
+#image-window-text span{
+  font-style: normal;
+  top: 20px;
+}
 .recipe-box{
+  /* margin: 0 auto; */
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  border: 2px solid black;
 }
-.recipe-title{
+.recipe{
+  display: flex;
+  max-width: 200px;
+  height: 200px;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px;background-color: white;
+  box-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.034);
+}
+.recipe-button{
+  position: relative;
   font-weight: bold;
   font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #E22F37;
+  justify-content: center;
+  box-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.034);
 }
 
-tr{
+/* tr{
   font-size: 3em;
   border: 2px solid black
 }
@@ -35,7 +135,7 @@ tr{
 td{
   border: 2px solid black;
   padding: 10px;
-}
+} */
 
 #button{
   width: 100%;
