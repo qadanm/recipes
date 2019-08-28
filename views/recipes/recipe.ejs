@@ -11,10 +11,28 @@
         <div><%= recipe.description %></div>
 </section>
 
-<br><br><br>
+
 <br><br><h2>Comments</h2>
-<form id="add-commeny-form" method="POST"
-  action="/recipes/<%= recipe._id %>/reviews">
+
+<% if (recipe.comments.length) { %>
+<% recipe.comments.forEach(function(c) { %>
+    <tr>
+      <div><%= c.content %></div>
+    </tr>
+    <% }); %>
+    <tr>
+      <td colspan="2"></td>
+      <td><strong><%= (total / recipe.comments.length).toFixed(1) %></strong></td>
+    </tr>
+</tbody>
+</table>
+<% } else { %>
+<h5>No Comments Yet</h5>
+<% } %>
+
+<br><br><br>
+<form id="add-comment-form" method="POST"
+  action="/recipes/<%= recipe._id %>">
   <label>Comment:</label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment">

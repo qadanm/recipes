@@ -4,7 +4,9 @@ module.exports = {
     index,
     create,
     addRecipe,
-    show
+    show,
+    addComment
+
     // deleteRecipe
 }
 
@@ -43,9 +45,27 @@ function show(req, res) {
             recipe: recipe,
             user: req.user,
             name: req.query.name,
+            total: null
         });
     })
 }
+
+function addComment(req, res) {
+    console.log(req.params.id)
+    // var comment = new Recipe.comments(req.body);
+    Recipe.findById(req.params.id, function (e, recipe) {
+    recipe.comments.push(req.body)
+    recipe.save(function (err) {
+        res.render('recipes/recipe', {
+            title: 'Recipe',
+            recipe: recipe,
+            user: req.user,
+            name: req.query.name,
+            total: null
+        })
+        console.log(req.body, '<<<<<<req.body<<<<')
+    })
+    })}
 
 function deleteRecipe(req, res, next) {
 
