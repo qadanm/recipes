@@ -18,6 +18,20 @@
         <div id="recipe-page-description-description"><%= recipe.description %></div>
 </section>
 
+<div class="call-to-action-container">
+
+<% if (user) { %>
+  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Delete Recipe</a></div>
+<% } else { %>
+  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener" style="visibility: hidden">Delete Recipe</a></div>
+<% } %>
+<% if (user) { %>
+  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Edit Recipe</a></div>
+<% } else { %>
+  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener" style="visibility: hidden">Edit Recipe</a></div>
+<% } %>
+
+</div>
 
 <h2>Comments</h2>
 
@@ -38,13 +52,22 @@
 <h5>No Comments Yet</h5>
 <% } %>
 
-<br><br><br>
-<form id="add-comment-form" method="POST"
+<% if (user) { %>
+  <form id="add-comment-form" method="POST"
   action="/recipes/<%= recipe._id %>">
   <label>Comment:</label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment">
 </form>
+<% } else { %>
+  <form id="add-comment-form" method="POST"
+  action="/recipes/<%= recipe._id %>" style="visibility: hidden">
+  <label>Comment:</label>
+  <textarea name="content"></textarea>
+  <input type="submit" value="Add Comment">
+</form>
+<% } %>
+
 
 
 <%- include('../partials/footer') %>

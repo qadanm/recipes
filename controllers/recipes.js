@@ -6,8 +6,8 @@ module.exports = {
     create,
     addRecipe,
     show,
-    addComment
-
+    addComment,
+    deleteRecipe
     // deleteRecipe
 }
 
@@ -69,5 +69,10 @@ function addComment(req, res) {
     })}
 
 function deleteRecipe(req, res, next) {
-
+    Recipe.findOne({'recipes._id': req.params.id}, function(err, recipe) {
+        recipe.facts.id(req.params.id).remove();
+        recipe.save(function(err) {
+          res.redirect('/recipes');
+        });
+      });
 }
