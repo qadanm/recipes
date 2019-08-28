@@ -1,4 +1,5 @@
-const Recipe = require('../models/user-profile')
+const Recipe = require('../models/user-profile');
+const User = require('../models/user');
 
 module.exports = {
     index,

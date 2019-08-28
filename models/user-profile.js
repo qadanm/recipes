@@ -21,21 +21,4 @@ var recipeSchema = new mongoose.Schema({
     timestamps: true
 });
 
-  // var userProfileSchema = new mongoose.Schema({
-  //   name: String,
-  //   email: String,
-  //   recipes: [recipeSchema],
-  //   googleId: String
-  // }, {
-  //   timestamps: true
-  // });
-
-
-// module.exports = {
-//     getAll
-// }
-// function getAll(){
-
-// }
-
 module.exports = mongoose.model('Recipe', recipeSchema); 

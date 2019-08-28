@@ -1,18 +1,25 @@
 <%- include('../partials/header') %>
 
+<div class="image-window-recipe">
 
+    <div id="image-window-black-area-background">
+        <p id="image-window-text" style="font-size: 5em"><%= recipe.title %>
+        </p>
+    </div>
+    
+    </div>
 
 <section id="show-page">
-    <div>Recipe: </div>
-        <div><%= recipe.title %></div>
-    <div>Ingredients: </div>
-        <div><%= recipe.ingredients %></div>
-    <div>Description: </div>
-        <div><%= recipe.description %></div>
+    <div id="recipe-page-recipe" style="visibility: hidden">Recipe</div>
+        <div id="recipe-page-recipe-recipe" style="visibility: hidden"><%= recipe.title %></div>
+    <div id="recipe-page-ingredients">Ingredients</div>
+        <div id="recipe-page-ingredients-ingredients"><%= recipe.ingredients %></div>
+    <div id="recipe-page-description">Description</div>
+        <div id="recipe-page-description-description"><%= recipe.description %></div>
 </section>
 
 
-<br><br><h2>Comments</h2>
+<h2>Comments</h2>
 
 <% if (recipe.comments.length) { %>
 <% recipe.comments.forEach(function(c) { %>

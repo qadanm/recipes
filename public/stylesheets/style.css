@@ -24,6 +24,17 @@ header{
   left: 5px; 
   transition: all .4s;
 }
+#website-name{
+  font-family: 'Handlee', cursive;
+  position: Absolute; 
+  color: white;
+  letter-spacing: 4px;
+  font-size: 2.7em;
+  top: 14px;
+  left: 37%; 
+  transition: all .4s;
+  text-shadow: 2px 2px 2px rgb(70, 70, 70, .2);
+}
 #icon:hover{
   width: 60px;
   height: 78px;
@@ -45,6 +56,7 @@ body {
   display: block;
   border: 2px solid transparent;
   transition: all .4s;
+  box-shadow: 2px 2px 2px rgb(70, 70, 70, .2);
 }
 
 #login:hover, #logout:hover, #add-recipe-button-nav:hover {
@@ -65,10 +77,52 @@ body {
   background-repeat: no-repeat;
   display: flex;
 } */
+#steps{
+  background-color: #ffe600ad;
+  color: white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.step{
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  text-align: center;
+  padding: 10px 0px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.step:last-child{
+  padding-bottom: 30px;
+}
+
+.step-icon{
+  padding: 15px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 2px rgb(70, 70, 70, .15);
+}
+.step-text{
+  font-style: italic;
+  text-shadow: 2px 2px 2px rgb(70, 70, 70, .15);
+}
 .image-window {
     
   min-height: 500px;
   background-image: url(../images/bowl-cuisine-delicious-1640773.jpg);
+  background-size: cover;
+  background-attachment: fixed
+  
+}
+.image-window-recipe {
+    
+  min-height: 500px;
+  background-image: url(../images/anise-aroma-art-277253.jpg);
   background-size: cover;
   background-attachment: fixed
   
@@ -99,10 +153,17 @@ body {
   font-style: normal;
   top: 20px;
 }
+.recipes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center;
+}
 .recipe-box{
   /* margin: 0 auto; */
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 .recipe{
   display: flex;
@@ -140,4 +201,17 @@ td{
   width: 100%;
   background-color: cadetblue;
   color: white;
+}
+
+#show-page{
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+#recipe-page-recipe{
+  width: 70%;
+  background-color: #E22F37;
+  color: white;
+  font-size: 2.3em;
+  text-align: center;
 }

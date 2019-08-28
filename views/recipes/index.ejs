@@ -7,16 +7,94 @@
         <span> - Anthony Bourdain</span>
     </p>
 </div>
-
 </div>
-    <% recipes.forEach(function(r) { %>
-        <div class="recipe-box">
-            <div class="recipe">
-                <div><a href="/recipes/<%= r._id %>" class="recipe-button"><%= r.title %></a></div>
-                <div class="recipe-ing"><%= r.ingredients %></div>
-                <div class="recipe-desc"><%= r.description %></div>
-            </div>
-        </div>
-    <% }); %>
+<section id="steps">
+        
+        <div class="container">
+            
+            <div class="steps-container">
+                
+                <div class="step">
+                    
+                    <div class="step-icon">
+                        
+                        <i class="fas fa-search"></i>
 
+                    </div>
+                    <div class="step-text">
+                        
+                        <h5>Step 1</h5>
+                        <h6>Browse</h6>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="step">
+                    
+                    <div class="step-icon">
+                        
+                         <i class="fas fa-user-plus"></i>
+                        
+                    </div>
+                    
+                    <div class="step-text">
+                        
+                        <h5>Step 2</h5>
+                        <h6>Sign up</h6>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="step">
+                    
+                    <div class="step-icon">
+                        
+                        <i class="fas fa-pizza-slice"></i>
+                        
+                    </div>
+                    
+                    <div class="step-text">
+                        
+                        <h5>Step 3</h5>
+                        <h6>Post</h6>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="step">
+                    
+                    <div class="step-icon">
+                        
+                        <i class="fas fa-infinity"></i>
+                        
+                    </div>
+                    
+                    <div class="step-text">
+                        
+                        <h5>Step 4</h5>
+                        <h6>Repeat</h6>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+<section class="recipes">
+    <% recipes.forEach(function(r) { %>
+            <div class="recipe-box">
+                <div class="recipe">
+                    <div><a href="/recipes/<%= r._id %>" class="recipe-button"><%= r.title %></a></div>
+                    <div class="recipe-ing"><%= r.ingredients %></div>
+                    <div class="recipe-desc"><%= r.description %></div>
+                </div>
+            </div>
+    <% }); %>
+</section>
 <%- include('../partials/footer') %> 
