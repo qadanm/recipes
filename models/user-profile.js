@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+const User = require('../models/user');
 
 var commentSchema = new mongoose.Schema({
   user : String,
@@ -8,14 +9,21 @@ var commentSchema = new mongoose.Schema({
 
 var recipeSchema = new mongoose.Schema({
     title:{
-        type: String
+      type: String,
+      required: true
     },
     ingredients:{
-        type: String
+      type: String,
+      required: true
     },
     description:{
-        type: String
+      type: String,
     },
+    author: {
+      type: String,
+      required: true
+    },
+
     comments: [commentSchema],
   }, {
     timestamps: true

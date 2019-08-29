@@ -8,6 +8,10 @@ var passport = require('passport');
 
 //   });
 // });
+
+router.get('/', function(req,res){
+  res.redirect('/recipes')
+})
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
@@ -15,12 +19,12 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
-    failureRedirect : '/'
+    successRedirect : '/recipes',
+    failureRedirect : '/recipes'
   }
 ));
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/recipes');
 });
 module.exports = router;

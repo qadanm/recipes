@@ -7,8 +7,9 @@ module.exports = {
     addRecipe,
     show,
     addComment,
-    deleteRecipe
-    // deleteRecipe
+    deleteRecipe,
+    editForm,
+    editRecipe
 }
 
 function index(req, res) {
@@ -24,6 +25,7 @@ function index(req, res) {
 
 // ----- >  form
 function create(req, res, err) {
+    console.log(req.user);
     res.render('recipes/submit', {
         user: req.user,
         name: req.query.name,
@@ -33,8 +35,6 @@ function create(req, res, err) {
 function addRecipe(req, res) {
     var recipe = new Recipe(req.body);
     recipe.save(function (err) {
-        console.log(req.body)
-        console.log(recipe)
         res.redirect('/')
     })
 }
@@ -53,7 +53,6 @@ function show(req, res) {
 
 function addComment(req, res) {
     console.log(req.params.id)
-    // var comment = new Recipe.comments(req.body);
     Recipe.findById(req.params.id, function (e, recipe) {
     recipe.comments.push(req.body)
     recipe.save(function (err) {
@@ -64,15 +63,51 @@ function addComment(req, res) {
             name: req.query.name,
             total: null
         })
-        console.log(req.body, '<<<<<<req.body<<<<')
     })
     })}
 
 function deleteRecipe(req, res, next) {
-    Recipe.findOne({'recipes._id': req.params.id}, function(err, recipe) {
-        recipe.facts.id(req.params.id).remove();
-        recipe.save(function(err) {
-          res.redirect('/recipes');
+    Recipe.findByIdAndDelete(req.params.id, function(err) {
+          res.redirect('/');
         });
-      });
+}
+// function deleteRecipe(req, res, next) {
+//     Recipe.findOne({'recipes._id': req.params.id}, function(err, recipe) {
+//         recipe.id(req.params.id).remove();
+//         recipe.save(function(err) {
+//           res.redirect('/recipes');
+//         });
+//       });
+// }
+
+function editForm(req, res, next){
+    console.log('this is editForm');
+    // console.log(req.user);
+    Recipe.findById(req.params.id, function(err, recipe){
+        res.render('recipes/edit', {
+            recipe,
+            title: 'Recipe',
+            user: req.user,
+            // name: user.name,
+            total: null
+        });
+    })
+}
+
+function editRecipe(req, res, next){
+    // console.log(req);
+    console.log(req.params.id)
+    Recipe.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (err, recipe) => {
+            if (err) return res.redirect('back');
+            return res.redirect(`/recipes`);
+        }
+    )
+    // Recipe.findById(req.params.id, function(e, recipe){
+    //     console.log(recipe)
+    //     console.log(req.body)
+    // })
 }

@@ -21,16 +21,24 @@
 <div class="call-to-action-container">
 
 <% if (user) { %>
-  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Delete Recipe</a></div>
-<% } else { %>
-  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener" style="visibility: hidden">Delete Recipe</a></div>
-<% } %>
-<% if (user) { %>
-  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Edit Recipe</a></div>
-<% } else { %>
-  <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener" style="visibility: hidden">Edit Recipe</a></div>
+  <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+    <input type="submit" value='Delete Recipe'>
+  </form>
+  <% } else{ %>
+  <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+    <input type="submit" value='Delete Recipe' style="visibility: hidden">
+  </form>
 <% } %>
 
+
+  <!-- <div class="button_cont" align="center"><a class="example_a"  target="_blank" rel="nofollow noopener" style="visibility: hidden">Delete Recipe</a></div> -->
+
+  <% if (user) { %>
+   <!-- <button><a href="/recipes/edit>">Edit </a></button>  -->
+    <form class="button_cont" align="center" action="/edit/<%= recipe._id%>" method="GET">
+      <button type="submit">Edit Recipe </button>
+    </form>
+  <% } %>
 </div>
 
 <h2>Comments</h2>

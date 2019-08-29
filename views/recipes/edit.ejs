@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
-   
-<form name="sumbit-recipe" method="POST" action="/recipes" class="form-style-7">
+
+<form name="sumbit-recipe" method="POST" action="/recipes/<%=recipe._id%>/edit" class="form-style-7">
     <ul>
             <li>
                 <label for="name">Your Name</label>
@@ -8,31 +8,58 @@
             </li>
             <li>
                 <label for="name-of-recipe">Name of Recipe</label>
-                <input type="text" name="title" >
+                <input type="text" name="title" value="<%=recipe.title%>" >
                 <span>e.g "Chicken Tikka Masala"</span>
             </li>
             <li>
                 <label for="ingredients">Ingredients</label>
-                <input type="text" name="ingredients">
+                <input type="text" name="ingredients" value="<%=recipe.ingredients%>">
                 <span>Please seperate ingredients with commas</span>
             </li>
             <li>
                 <label for="description">Description</label>
-                <input type="text" name="description">
+                <input type="text" name="description" value="<%=recipe.description%>">
                 <span>e.g "First, prepare your mixing bowl"</span>
             </li>
             <li>
-                <input type="submit" value="Add Recipe" >
+                <input type="submit" value="Edit Recipe" >
             </li>
             </ul>
 </form>   
+
+
 
 <!-- <form name="sumbit-recipe" method="POST" action="/recipes">
     <table>
         <tr>
         <tr>
             <td>Author (Sepereated by commas)</td>
-            <td><input type="text" name="author" value="<%=user.name%>" ></td>
+            <td><input type="text" name="author" value="<%= user.name %>" ></td>
+        </tr> 
+        <td>Recipe Name</td>
+            <td><input type="text" name="title" placeholder="Fried Chicken" ></td>
+        </tr>
+        <tr>
+            <td>Ingredients (Sepereated by commas)</td>
+            <td><input type="text" name="ingredients" placeholder="Salt, Pepper, etc" ></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text" name="description"placeholder="Perfect for parties" ></td>
+            </tr>
+        <tr>
+            <td colspan="2"><input type="submit" id="button" value="Change Recipe"></td>
+        </tr>
+    </table>
+</form>    -->
+
+<!-- 
+<form name="sumbit-recipe" method="POST" action="/recipes">
+    <table>
+        <tr>
+        <tr>
+            <td>Author (Sepereated by commas)</td>
+            <td><input type="text" name="author" value="<%= user.name %>" ></td>
         </tr>
         <td>Recipe Name</td>
             <td><input type="text" name="title" placeholder="Fried Chicken" ></td>
@@ -46,9 +73,10 @@
             <td><input type="text" name="description"placeholder="Perfect for parties" ></td>
             </tr>
         <tr>
-            <td colspan="2"><input type="submit" id="button" value="Add Recipe"></td>
+            <td colspan="2"><input type="submit" id="button" value="Change Recipe"></td>
         </tr>
     </table>
 </form>    -->
+
 
 <%- include('../partials/footer') %>
