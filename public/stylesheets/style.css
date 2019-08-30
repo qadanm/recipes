@@ -274,28 +274,55 @@ td{
   display: flex;
   flex-direction: row;
 }
-#ingredients-color{
-  background: #E22F37;
-  opacity: 0.5;
+#color{
+background-color: #222222;
 }
-#description-color{
-  background-color: rgba(162, 200, 209, 0.87);
-  opacity: 0.5;
+#color1{
+  background-color: #3a3a3a;
 }
-#author-color{
-  background-color: #ffe600ad;
-  opacity: 0.5;
+.recipe-window-title{
+  width: 100%;
+  color: white;
+  opacity: 1;
+  font-size: 6em;
+  opacity: 1.0;
+  /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); */
+  text-align: center;
 }
-#call-to-action-color{
-  background: #E22F37;
-  opacity: 0.5;
+#recipe-page-ingredients-ingredients{
+  color: white;
+  font-size: 2rem;
+  padding: 20px;
 }
 #comments-color{
   background: #434343;
   opacity: 0.5;
 }
+#comments{
+  color: rgb(251, 255, 0);
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.233);
+}
 .recipe-window{
 
+}
+#add-comment-form{
+  color: white;
+}
+.recipe-window-icon{
+  font-size: 12em;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+.recipe-window-icon1{
+  font-size: 20em;
+  padding: 15px;
+  margin-top: 5%;
+  text-align: center;
+  color: white;
 }
 .recipe-element-window{
   height: 600px;
