@@ -108,13 +108,11 @@ header{
   font-style: italic;
   text-shadow: 2px 2px 2px rgb(70, 70, 70, .15);
 }
-.image-window {
-    
+.image-window {   
   min-height: 500px;
   background-image: url(../images/bowl-cuisine-delicious-1640773.jpg);
   background-size: cover;
   background-attachment: fixed
-  
 }
 .image-window-recipe {
     
@@ -167,7 +165,6 @@ header{
   width: 200px;
   height: 200px;
   flex-wrap: wrap;
-  /* padding: 10px; */
   margin: 10px;background-color: white;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
   transition: all .3s;
@@ -276,6 +273,33 @@ td{
 .call-to-action-container{
   display: flex;
   flex-direction: row;
+}
+#ingredients-color{
+  background: #E22F37;
+  opacity: 0.5;
+}
+#description-color{
+  background-color: rgba(162, 200, 209, 0.87);
+  opacity: 0.5;
+}
+#author-color{
+  background-color: #ffe600ad;
+  opacity: 0.5;
+}
+#call-to-action-color{
+  background: #E22F37;
+  opacity: 0.5;
+}
+#comments-color{
+  background: #434343;
+  opacity: 0.5;
+}
+.recipe-window{
+
+}
+.recipe-element-window{
+  height: 600px;
+  background-color: #6B9FFF;
 }
 .form-style-7{
 	max-width:400px;

@@ -8,17 +8,94 @@
     </div>
     
     </div>
-
+<!-- 
 <section id="show-page">
     <div id="recipe-page-recipe" style="visibility: hidden">Recipe</div>
         <div id="recipe-page-recipe-recipe" style="visibility: hidden"><%= recipe.title %></div>
-    <div id="recipe-page-ingredients">Ingredients</div>
-        <div id="recipe-page-ingredients-ingredients"><%= recipe.ingredients %></div>
-    <div id="recipe-page-description">Description</div>
-        <div id="recipe-page-description-description"><%= recipe.description %></div>
+    
+     -->
+  <div class="recipe-window">
+    <div class="recipe-element-window" id="ingredients-color">
+      <div class="recipe-window-title">
+        <div id="recipe-page-ingredients">Ingredients</div>
+      </div>
+        <div class="recipe-window-ingredients">
+          <div id="recipe-page-ingredients-ingredients"><%= recipe.ingredients %></div>
+        </div>
+    </div>
+    <div class="recipe-element-window" id="description-color">
+        <div class="recipe-window-title">
+          <div id="recipe-page-ingredients">Description</div>
+        </div>
+          <div class="recipe-window-ingredients">
+            <div id="recipe-page-ingredients-ingredients"><%= recipe.description %></div>
+          </div>
+      </div>
+      <div class="recipe-element-window" id="author-color">
+            <div class="recipe-window-title">
+                <div id="recipe-page-ingredients-ingredients"><%= recipe.author %></div>            
+            </div>
+      </div>
+      <div class="recipe-element-window" id="call-to-action-color">
+            <% if (user) { %>
+              <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+                <input type="submit" value='Delete Recipe'>
+              </form>
+              <% } else{ %>
+              <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+                <input type="submit" value='Delete Recipe' style="visibility: hidden">
+              </form>
+            <% } %>
+            <% if (user) { %>
+              <!-- <button><a href="/recipes/edit>">Edit </a></button>  -->
+               <form class="button_cont" align="center" action="/edit/<%= recipe._id%>" method="GET">
+                 <button type="submit">Edit Recipe </button>
+               </form>
+             <% } %>
+        </div>
+        <div class="recipe-element-window" id="comments-color">
+            <div class="recipe-window-title">
+                <h2>Comments</h2>            
+            </div>
+
+            <% if (recipe.comments.length) { %>
+            <% recipe.comments.forEach(function(c) { %>
+                <tr>
+                  <div><%= c.content %></div>
+                  <div><%= c.user %></div>
+                </tr>
+                <% }); %>
+                <tr>
+                  <td colspan="2"></td>
+                  <td><strong><%= (total / recipe.comments.length).toFixed(1) %></strong></td>
+                </tr>
+            </tbody>
+            </table>
+            <% } else { %>
+                  <h5>No Comments Yet</h5>        
+            <% } %>
+            
+            <% if (user) { %>
+              <form id="add-comment-form" method="POST"
+              action="/recipes/<%= recipe._id %>">
+              <label>Comment:</label>
+              <textarea name="content"></textarea>
+              <input type="submit" value="Add Comment">
+            </form>
+            <% } else { %>
+              <form id="add-comment-form" method="POST"
+              action="/recipes/<%= recipe._id %>" style="visibility: hidden">
+              <label>Comment:</label>
+              <textarea name="content"></textarea>
+              <input type="submit" value="Add Comment">
+            </form>
+            <% } %>
+      </div>
+    </div> 
+    
 </section>
 
-<div class="call-to-action-container">
+<!-- <div class="call-to-action-container">
 
 <% if (user) { %>
   <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
@@ -28,20 +105,20 @@
   <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
     <input type="submit" value='Delete Recipe' style="visibility: hidden">
   </form>
-<% } %>
+<% } %> -->
 
 
   <!-- <div class="button_cont" align="center"><a class="example_a"  target="_blank" rel="nofollow noopener" style="visibility: hidden">Delete Recipe</a></div> -->
 
-  <% if (user) { %>
+  <!-- <% if (user) { %> -->
    <!-- <button><a href="/recipes/edit>">Edit </a></button>  -->
-    <form class="button_cont" align="center" action="/edit/<%= recipe._id%>" method="GET">
+    <!-- <form class="button_cont" align="center" action="/edit/<%= recipe._id%>" method="GET">
       <button type="submit">Edit Recipe </button>
     </form>
   <% } %>
-</div>
+</div> -->
 
-<h2>Comments</h2>
+<!-- <h2>Comments</h2>
 
 <% if (recipe.comments.length) { %>
 <% recipe.comments.forEach(function(c) { %>
@@ -74,7 +151,7 @@
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment">
 </form>
-<% } %>
+<% } %> -->
 
 
 
