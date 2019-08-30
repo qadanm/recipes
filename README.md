@@ -6,7 +6,7 @@
 
 ## :cookie: Home Page
 
-[Home](https://i.imgur.com/jvQaJ2v.jpg)
+[Home](different-state-imgs/Home-Page.png)
 
 ## :cookie: Getting started is super easy:
 
