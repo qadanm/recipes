@@ -6,7 +6,7 @@
 
 ## :cookie: Home Page
 
-[Home](different-state-imgs/Home-Page.png)
+[Home](planning/state/Home-Page.png)
 
 ## :cookie: Getting started is super easy:
 
