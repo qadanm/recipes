@@ -64,20 +64,20 @@
             </tbody>
             </table>
             <% } else { %>
-                  <h5>No Comments Yet</h5>        
+                  <h5 id="no-comments-yet">No Comments Yet</h5>        
             <% } %>
             
             <% if (user) { %>
               <form id="add-comment-form" method="POST"
               action="/recipes/<%= recipe._id %>">
-              <label>Comment:</label>
-              <textarea name="content"></textarea>
-              <input type="submit" value="Add Comment">
+              <div class="comment-form">
+              <textarea name="content" id="comment-text-area"></textarea>
+              <input type="submit" value="Add Comment" id="comment-botton">
             </form>
+          </div>
             <% } else { %>
               <form id="add-comment-form" method="POST"
               action="/recipes/<%= recipe._id %>" style="visibility: hidden">
-              <label>Comment:</label>
               <textarea name="content"></textarea>
               <input type="submit" value="Add Comment">
             </form>
@@ -85,19 +85,21 @@
       </div>
     </div> 
         <% if (user) { %>
-          <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <input type="submit" value='Delete Recipe'>
+          <div class="action-bottons">
+          <form class="button_cont" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <input type="submit" value='Delete Recipe' id="delete-button" >
           </form>
           <% } else{ %>
-          <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+          <form class="button_cont" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
             <input type="submit" value='Delete Recipe' style="visibility: hidden">
           </form>
         <% } %>
         <% if (user) { %>
           <!-- <button><a href="/recipes/edit>">Edit </a></button>  -->
-           <form class="button_cont" align="center" action="/edit/<%= recipe._id%>" method="GET">
-             <button type="submit">Edit Recipe </button>
+           <form class="button_cont" action="/edit/<%= recipe._id%>" method="GET">
+             <button type="submit" id="edit-button">Edit Recipe </button>
            </form>
+          </div>
          <% } %>
     
 </section>
@@ -105,7 +107,7 @@
 <!-- <div class="call-to-action-container">
 
 <% if (user) { %>
-  <form class="button_cont" align="center" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+  <form class="button_cont" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
     <input type="submit" value='Delete Recipe'>
   </form>
   <% } else{ %>

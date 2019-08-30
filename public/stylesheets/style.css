@@ -173,6 +173,9 @@ header{
   transform: scale(1.1) rotate(5deg);
   box-shadow: 16px 16px 16px 16px rgba(0,0,0,.15);
 }
+.recipe-window{
+  font-family: 'Roboto', sans-serif;
+}
 #recipe-text-container{
   width: 100%;
   height: 50%;
@@ -192,6 +195,7 @@ header{
   align-items: center;
 }
 .recipe-title-text{
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   color: white;
   font-size: 1.4em;
@@ -283,6 +287,7 @@ background-color: #222222;
 .recipe-window-title{
   width: 100%;
   color: white;
+  
   opacity: 1;
   font-size: 6em;
   opacity: 1.0;
@@ -437,4 +442,84 @@ background-color: #222222;
 .form-style-7 input[type="button"]:hover{
 	background: #6B9FFF;
 	color:#fff;
+}
+.comment-form{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+}
+#comment-botton{
+  background-color: rgba(162, 200, 209, 0.87);
+  border: none;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: white;
+}
+#comment-text-area{
+  padding: 0;
+  height: 60px;
+  position: relative;
+  outline: none;
+  border: 2px solid #cdcdcd;
+  border-color: rgba(134, 55, 55, 0.15);
+  background-color: white;
+  font-size: 20px;
+}
+#no-comments-yet{
+  font-size: 3em;
+  color: white;
+}
+.action-bottons{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+#edit-button{
+  background-color: green;
+  border: none;
+  padding: 16px;
+  text-decoration: none;
+  /* margin: 4px; */
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  font-size: 1.3em;
+  border: 5px solid green;
+  transition: all .3s;
+}
+#delete-button{
+  background-color: red;
+  border: none;
+  padding: 16px;
+  text-decoration: none;
+  /* margin: 4px; */
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  font-size: 1.3em;
+  border: 5px solid red;
+  transition: all .3s;
+}
+#edit-button:hover{
+background-color: white;
+color: green;
+border: 5px solid green;
+}
+#delete-button:hover{
+  background-color: white;
+  color: red;
+  border: 5px solid red;
+}
+footer{
+  color: white;
+  background-color: rgb(31, 31, 31);
+  padding: 50px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  bottom: 0;
 }
