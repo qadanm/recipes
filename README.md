@@ -2,7 +2,7 @@
 
 
 
-## Farawla, the Arabic word for Strawberry.
+# Farawla, the Arabic word for Strawberry.
 
 ## This Web Application is a simplistic approach to a recipe websites. Straight to the point to the stuff that matters. 
 
